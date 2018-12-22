@@ -1,5 +1,7 @@
 const config = require("./data/SiteConfig");
 
+const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2ZXJzaW9uIjoxLCJ0b2tlbklkIjoiYWMzOGNiNjktNmYxYi00OTc5LWE4OGItMmYzNmNkYThlY2M4In0.c1UuFIwufBULnqt192WK2J3ZrxFOcy1zr_WGm_CEsGM';
+//const uri = 'https://api-useast.graphcms.com/v1/cjo0xp1m93ben01dgp41d2fw1/master';
 const pathPrefix = config.pathPrefix === "/" ? "" : config.pathPrefix;
 
 module.exports = {

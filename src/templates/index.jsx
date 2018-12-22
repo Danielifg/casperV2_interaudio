@@ -10,7 +10,6 @@ import SiteWrapper from "../components/SiteWrapper/SiteWrapper";
 import Footer from "../components/Footer/Footer";
 import MainHeader from "../components/MainHeader/MainHeader";
 import MainNav from "../components/MainNav/MainNav";
-
 import MenuButton from "../components/MenuButton/MenuButton";
 import PageTitle from "../components/PageTitle/PageTitle";
 import PageDescription from "../components/PageDescription/PageDescription";
@@ -22,7 +21,9 @@ import LogoImg from '../../static/logos/logo-transparent.png'
 import SloganImg from '../../static/images/slogan-transparent.png'
 import WeddingImg from '../../static/images/wedding_img.jpg'
 import SimpleCard from '../components/Cards/SimpleCard'
+import { ApolloProvider } from 'react-apollo';
 
+import { Provider } from 'react-redux';
 
 class IndexTemplate extends React.Component {
   state = {
@@ -53,13 +54,13 @@ class IndexTemplate extends React.Component {
   };
 
   render() {
-    const { nodes,page,pages,total,limit,prev,next } = this.props.pathContext;
-    const authorsEdges = this.props.data.authors.edges;
+    const { nodes,page,pages,total,limit,prev,next } = this.props.pathContext;    
     const logo_img = LogoImg;
     const slogan_img = SloganImg;
     const wedding_img = WeddingImg;
 
     return (
+     
       <Drawer className="home-template" isOpen={this.state.menuOpen}>
         <Helmet title={config.siteTitle} />
         <SEO postEdges={nodes} />
@@ -76,7 +77,7 @@ class IndexTemplate extends React.Component {
               <Logo logo={logo_img} title={config.siteTitle}/>
                 <MenuButton
                   navigation={config.siteNavigation}
-                  onClick={this.handleOnClick}
+                  onClick={() => null}
                 />
               </MainNav>
               <div className="vertical">
@@ -89,7 +90,6 @@ class IndexTemplate extends React.Component {
                     urls={config.siteSocialUrls}
                     color="currentColor"
                   />
-
                 </div>
               </div>
               <Link
@@ -116,27 +116,19 @@ class IndexTemplate extends React.Component {
           />
         </SiteWrapper>
       </Drawer>
+
     );
   }
 }
 
-/* eslint no-undef: "off" */
+/* eslint no-undef: "off"
 export const pageQuery = graphql`
-  query IndexQuery {
-    # posts data comes from the context
-    # authors
-    authors: allAuthorsJson {
-      edges {
-        node {
-          id
-          name
-          image
-          url
-          bio
-        }
-      }
-    }
+  query assests {
+			 assets{
+         id
+         }
   }
 `;
+ */
 
 export default IndexTemplate;

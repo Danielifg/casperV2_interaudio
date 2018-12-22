@@ -1,4 +1,7 @@
 ### Node ###
+
+# CMS credentials
+*.env
 # Logs
 logs
 *.log
