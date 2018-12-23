@@ -21,7 +21,7 @@ import LogoImg from '../../static/logos/logo-transparent.png'
 import SloganImg from '../../static/images/slogan-transparent.png'
 import WeddingImg from '../../static/images/wedding_img.jpg'
 import SimpleCard from '../components/Cards/SimpleCard'
-import { ApolloProvider } from 'react-apollo';
+
 
 import { Provider } from 'react-redux';
 
